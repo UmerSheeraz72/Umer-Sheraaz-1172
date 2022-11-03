@@ -9,24 +9,205 @@
     <link rel="stylesheet" href="">
     <base href="image/">
     <style>
+        div.a {
+            width: 150px;
+            height: 80px;
+            background-color: yellow;
+            -ms-transform: rotate(20deg);
+            /* IE 9 */
+            transform: rotate(20deg);
+        }
+
+
+
+
+
+        div.b {
+            width: 150px;
+            height: 80px;
+            background-color: yellow;
+            -ms-transform: skewY(20deg);
+            /* IE 9 */
+            transform: skewY(20deg);
+        }
+
+        div.c {
+            width: 150px;
+            height: 80px;
+            background-color: yellow;
+            -ms-transform: scaleY(1.5);
+            /* IE 9 */
+            transform: scaleY(1.5);
+        }
+
+
+        body {
+            counter-reset: section;
+        }
+
+        h1 {
+            counter-reset: category;
+        }
+
+        h1:before {
+            counter-increment: section;
+            content: "Section " counter(section) ". ";
+        }
+
+        h2:before {
+            counter-increment: category;
+            content: counter(section) "." counter(category) " ";
+        }
+
+
+        q {
+            quotes: '[' ']' '"' '"';
+        }
+
+        q:before {
+            content: open-quote;
+        }
+
+        q:after {
+            content: close-quote;
+        }
+
+        h1:before {
+            content: "Note: ";
+            display: inline;
+        }
+
+
+
+        p9 {
+            height: 50px;
+            padding: 10px;
+            background-color: #f0e68c;
+        }
+
+
+        h1 {
+            color: #ea980c;
+        }
+
+        p {
+            color: rgb(214, 12, 137);
+            opacity: 0.25;
+
+        }
+
+
+        h1 {
+            border: 5px solid #ff0000;
+            border-bottom: 5px dashed #ff0000;
+            padding: 15px;
+            background: #ffb6c1;
+            border: 2px solid #f08080;
+            border-bottom-left-radius: 20px;
+
+        }
+
+        h2 {
+            border-style: solid;
+            border-bottom-color: #ff0000;
+
+        }
+
+        body {
+            background: #ffff00 url("#") no-repeat fixed center;
+
+        }
+
+
         h1 {
             color: black;
         }
-            table,
-            th,
-            td {
-                border: 1px solid black;
-                border-collapse: collapse;
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 20px;
+        }
+
+        .card {
+
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            line-height: 300px;
+            margin: -150px;
+            background: white;
+            color: #03446a;
+            text-align: center;
+            font-size: 40px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            animation-name: sample;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: reverse;
+
+
+
+        }
+
+        @keyframes sample {
+
+            from {
+                border-radius: 0%;
             }
 
-            th,
-            td {
-                padding: 20px;
+            to {
+                border-radius: 50%;
             }
+        }
+
+
+        img {
+            opacity: 0.25;
+        }
     </style>
 </head>
 
 <body>
+
+
+
+    <h1>The transform Property</h1>
+
+    <h2>transform: rotate(20deg):</h2>
+    <div class="a">Hello World!</div>
+    <br>
+
+    <h2>transform: skewY(20deg):</h2>
+    <div class="b">Hello World!</div>
+    <br>
+
+    <h2>transform: scaleY(1.5):</h2>
+    <div class="c">Hello World!</div>
+
+
+
+    <h1>Tutorials</h1>
+    <h2>HTML Tutorial</h2>
+    <h2>CSS Tutorial</h2>
+    <h1>References</h1>
+    <h2>HTML Tags</h2>
+    <h2>CSS Properties</h2>
+
+
+
+    <h1 style="margin-bottom: 50px;"> Welcome back Animation</h1>
+
+    <div class="card"> Back Animation </div>
+
     <header>
         <main>
             <h1>Pakistan Cricket Board</h1>
@@ -69,6 +250,9 @@
         exclusive
         authority for the regulation, administration, management and promotion of the game of cricket in Pakistan.
     </q>
+
+
+    <p7><q>Here is an example of <q>embedded</q> quotations.</q></p7>
 
 
 
@@ -126,6 +310,7 @@
 
     <audio src="O Boy - Jeremy Black.mp3" controls></audio>
 
+    <embed type="image/jpg" src="qwer.jpg" width="300" height="200">
 
 
 
@@ -185,136 +370,158 @@
     </div>
 
 
-        <table style="width:100%">
-            <tr>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>Age</th>
-            </tr>
-            <tr>
-                <td>umer</td>
-                <td>Sheeraz</td>
-                <td>78</td>
-            </tr>
-            <tr>
-                <td>Waqas</td>
-                <td>abdul</td>
-                <td>32</td>
-            </tr>
-            <tr>
-                <td>Naseem</td>
-                <td>Shahid</td>
-                <td>41</td>
-            </tr>
-        </table>
+    <table style="width:100%">
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>umer</td>
+            <td>Sheeraz</td>
+            <td>78</td>
+        </tr>
+        <tr>
+            <td>Waqas</td>
+            <td>abdul</td>
+            <td>32</td>
+        </tr>
+        <tr>
+            <td>Naseem</td>
+            <td>Shahid</td>
+            <td>41</td>
+        </tr>
+    </table>
 
+
+
+    <script>
+        document.write("Hello World!")
+    </script>
+    <noscript>Sorry, your browser does not support JavaScript!</noscript>
 
 
 
 
     <!-- List In HTMl -->
-        <h1>PCB</h1>
+    <h1>PCB</h1>
+
+    <p9><strong>Note:</strong> Play with the <code>height</code> property value to see how it works.</p9>
+</body>
+<p>PAK Cricket Board</p>
 
 
-        <p>PAK Cricket Board</p>
+<ul>
+    <li>Afridi </li>
+    <ul>
+        <li>best player</li>
 
+    </ul>
+    <li>Babar</li>
+    <ol>
+        <li>no.1 T20 Player</li>
+        <li>no.1 T20 Player</li>
 
-        <ul>
-            <li>Afridi </li>
-            <ul>
-                <li>best player</li>
+    </ol>
+    <li>Nawaz</li>
+    <li>Asif</li>
 
-            </ul>
-            <li>Babar</li>
-            <ol>
-                <li>no.1 T20 Player</li>
-                <li>no.1 T20 Player</li>
-
-            </ol>
-            <li>Nawaz</li>
-            <li>Asif</li>
-
-        </ul>
+</ul>
 
 
 
 
-
-    <section>
-        <dl>
-            <dt>PCB</dt>
-            <dd>PCB Stand for Pakistan Cricket Board </dd>
-            <dt>PSL</dt>
-            <dd>PSL Stand for Pakistan Super League</dd>
-
-        </dl>
-    </section>
+<blockquote
+    cite="https://www.pcb.com.pk/press-release-detail/asif-afridi-provisionally-suspended-under-pcb-anti-corruption-code.html">
+    As this is an ongoing investigation, the PCB will not make any further comment pending the outcome of this case.
+</blockquote>
 
 
-    <br>
-    <svg viewBox="0 0 250 100" xmlns="https://www.pcb.com.pk" stroke="Blue" fill="black">
-        <circle cx="30" cy="30" r="20" />
-    </svg>
-    <br>
+<figure>
+    <img src="qwer.jpg">
+    <figcaption>Describe about pic </figcaption>
+</figure>
 
-    <p>
-        The infinite sum
-        <math display="block">
-            <mrow>
-                <munderover>
-                    <mo>∑</mo>
-                    <mrow>
-                        <mi>n</mi>
-                        <mo>=</mo>
-                        <mn>1</mn>
-                    </mrow>
-                    <mrow>
-                        <mo>+</mo>
-                        <mn>∞</mn>
-                    </mrow>
-                </munderover>
-                <mfrac>
+
+<section>
+    <dl>
+        <dt>PCB</dt>
+        <dd>
+            <hr>PCB Stand for Pakistan Cricket Board</hr>
+        </dd>
+        <dt>PSL</dt>
+        <dd>
+            <hr> Stand for Pakistan Super League </he>
+        </dd>
+
+    </dl>
+</section>
+
+
+<br>
+<svg viewBox="0 0 250 100" xmlns="https://www.pcb.com.pk" stroke="Blue" fill="black">
+    <circle cx="30" cy="30" r="20" />
+</svg>
+<br>
+
+<p>
+    The infinite sum
+    <math display="block">
+        <mrow>
+            <munderover>
+                <mo>∑</mo>
+                <mrow>
+                    <mi>n</mi>
+                    <mo>=</mo>
                     <mn>1</mn>
-                    <msup>
-                        <mi>n</mi>
-                        <mn>2</mn>
-                    </msup>
-                </mfrac>
-            </mrow>
-        </math>
-        is equal to the real number
-        <math display="inline">
+                </mrow>
+                <mrow>
+                    <mo>+</mo>
+                    <mn>∞</mn>
+                </mrow>
+            </munderover>
             <mfrac>
+                <mn>1</mn>
                 <msup>
-                    <mi>π</mi>
+                    <mi>n</mi>
                     <mn>2</mn>
                 </msup>
-                <mn>6</mn>
             </mfrac>
-        </math>.
-    </p>
+        </mrow>
+    </math>
+    is equal to the real number
+    <math display="inline">
+        <mfrac>
+            <msup>
+                <mi>π</mi>
+                <mn>2</mn>
+            </msup>
+            <mn>6</mn>
+        </mfrac>
+    </math>.
+</p>
 
 
-    <details>
-        <summary>Detail</summary>
-        Pakistan Zindabad.
-    </details>
+<details>
+    <summary>Detail</summary>
+    Pakistan Zindabad.
+</details>
 
 
 
 
-    <footer>
-        <address>
-            Written by <a href="https://github.com/UmerSheeraz">Umer Sheeraz</a>.<br>
+<footer>
+    <address>
+        Written by <a href="https://github.com/UmerSheeraz">Umer Sheeraz</a>.<br>
 
 
-        </address>
-    </footer>
+    </address>
+</footer>
 
 
 
-        <script>
-            document.write("Hello World!")
-        </script>
+<script>
+    document.write("Hello World!")
+</script>
 
-        <noscript>ABC Deatailll</noscript>
+<noscript>ABC Deatailll</noscript>
